@@ -11,7 +11,7 @@ import uvmVehicles
 import uvmArrivals
 import requests
 
-
+ 
 
 serial = spi(port=0, device=0, gpio=noop())
 device = max7219(serial, cascaded=4, block_orientation=-90,rotate=0, blocks_arranged_in_reverse_order=False)
@@ -133,7 +133,7 @@ while True:
         timer = int(msg[11:13]) % 12 
         show_message(device,str(timer) + msg[13:16], fill="white", font=proportional(CP437_FONT))
 
-    #speed
+    #speed 
 
     if GPIO.input(BUTTON4) == GPIO.LOW:
         url = "https://transloc-api-1-2.p.rapidapi.com/vehicles.json"
